@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Unitex Logistics</title>
+  <meta name="description" content="Get a logistics quote from Unitex and find branch contacts across major ports in China.">
+  <link rel="canonical" href="https://unitexlogistics.com/contact">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="logo">U</span><span>UNITEX LOGISTICS</span></a>
+    <nav class="menu">
+      <a href="index.html">Home / 首页</a>
+      <a href="about.html">About / 关于我们</a>
+      <a href="services.html">Services / 服务</a>
+      <a href="network.html">Network / 全球网络</a>
+      <a href="contact.html">Contact / 联系我们</a>
+      <a href="portal.html">Portal / 客户门户</a>
+    </nav>
+    <a class="btn primary" href="#quoteForm">Inquiry Form / 询价表单</a>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container grid-2" style="align-items:start;">
+    <div>
+      <div class="kicker">Contact Unitex / 联系 Unitex</div>
+      <h1 style="font-size:48px">Tell Us Your Route. We’ll Build Your Plan.<br>告诉我们运输需求，我们为你定制方案</h1>
+      <p class="sub">Share cargo type, urgency and budget for faster quote accuracy.<br>填写货类、时效与预算可提升报价准确性。</p>
+
+      <section class="card branch-locator" id="branchLocator">
+        <div class="locator-head">
+          <h3>Find Your Local Unitex Office<br><span class="small">查找当地 Unitex 办事处</span></h3>
+          <p class="small">Use filters to quickly find your nearest China branch office.<br>使用筛选器快速定位最合适的中国分公司。</p>
+        </div>
+
+        <div class="locator-controls form-grid-2">
+          <select id="cityFilter" class="input" aria-label="City or port filter">
+            <option value="all">All Ports / 全部港口</option>
+          </select>
+          <input id="officeSearch" class="input" type="search" placeholder="Search office name / 搜索办事处名称" aria-label="Search office name">
+        </div>
+
+        <div id="serviceTagFilters" class="service-tag-filters" aria-label="Service filters"></div>
+        <p id="branchCount" class="small branch-count">Showing 16 offices / 当前显示 16 家办事处</p>
+
+        <div id="branchResults" class="branch-card-grid"></div>
+        <div id="branchEmpty" class="branch-empty" hidden>No matching office found.<br>未找到匹配办事处。</div>
+      </section>
+    </div>
+
+    <div class="card">
+      <form id="quoteForm" class="form">
+        <div class="form-grid-2">
+          <input class="input" name="name" placeholder="Your Name / 姓名" required>
+          <input class="input" name="company" placeholder="Company / 公司" required>
+        </div>
+        <div class="form-grid-2">
+          <input class="input" type="email" name="email" placeholder="Email / 邮箱" required>
+          <input class="input" name="phone" placeholder="Phone / 电话" required>
+        </div>
+        <div class="form-grid-2">
+          <input class="input" name="origin" placeholder="Origin / 起运地" required>
+          <input class="input" name="destination" placeholder="Destination / 目的地" required>
+        </div>
+        <textarea name="details" placeholder="Cargo details / 货物信息" required></textarea>
+        <button class="btn primary" type="submit">Submit Inquiry / 提交询盘</button>
+      </form>
+      <p class="small" style="margin-top:10px">Form opens mail app (mailto). / 表单将打开邮件客户端。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container">Instagram: @unitex1997 · LinkedIn: Unitex International Forwarding HK Ltd</div></footer>
+
+<script src="script.js"></script>
+</body>
+</html>

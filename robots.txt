@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://unitexlogistics.com/sitemap.xml

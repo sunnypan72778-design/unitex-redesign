@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Customer Portal | Unitex Logistics</title><meta name="description" content="Unitex customer self-service portal: quote auto-reply, sailing schedule query, cargo tracking, online order and order tracking."><link rel="stylesheet" href="styles.css"></head><body>
+<header class="header"><div class="container nav"><a class="brand" href="index.html"><span class="logo">U</span><span>UNITEX LOGISTICS</span></a><nav class="menu"><a href="index.html">Home / 首页</a><a href="services.html">Services / 服务</a><a href="contact.html">Contact / 联系我们</a><a href="portal.html">Portal / 客户门户</a></nav><a class="btn primary" href="#orderForm">Create Order / 创建订单</a></div></header>
+
+<section class="section"><div class="container">
+<div class="kicker">Account / 账户</div>
+<div class="card">
+  <form id="authForm" class="form">
+    <div class="form-grid-2"><input class="input" name="email" type="email" placeholder="Work Email" required><input class="input" name="password" type="password" placeholder="Password" required></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary" type="submit">Sign In / 登录</button><button class="btn" type="button" id="signUpBtn">Sign Up / 注册</button><button class="btn" type="button" id="signOutBtn">Sign Out / 退出</button></div>
+  </form>
+  <p id="authMsg" class="small"></p>
+  <form id="profileForm" class="form" style="margin-top:10px">
+    <div class="form-grid-2"><input class="input" name="fullName" placeholder="Full Name / 姓名"><input class="input" name="companyName" placeholder="Company Name / 公司名" required></div>
+    <button class="btn" type="submit">Complete Onboarding / 完成开户</button>
+  </form>
+  <p id="profileMsg" class="small"></p>
+</div>
+</div></section>
+
+<section class="section"><div class="container"><div class="kicker">Customer Self-Service / 客户自助</div><h1 style="font-size:42px">Portal for Inquiry, Schedule, Tracking & Orders<br>询价、船期、追踪、下单一体化门户</h1>
+<div class="portal-grid">
+  <article class="card"><h3>1) Quote Auto-Reply / 询价自动回复</h3><form id="quickQuoteForm" class="form"><input class="input" name="company" placeholder="Company / 公司" required><input class="input" name="contactName" placeholder="Contact Name / 联系人"><input class="input" type="email" name="email" placeholder="Email"><div class="form-grid-2"><input class="input" name="origin" placeholder="Origin / 起运地" required><input class="input" name="destination" placeholder="Destination / 目的地" required></div><textarea name="details" placeholder="Cargo details / 货物信息" required></textarea><button class="btn primary" type="submit">Submit Inquiry / 提交询价</button></form><p id="quoteReply" class="small"></p></article>
+  <article class="card"><h3>2) Sailing Schedule Query / 船期查询</h3><form id="scheduleForm" class="form"><div class="form-grid-2"><input class="input" name="origin" placeholder="Origin Port" required><input class="input" name="destination" placeholder="Destination Port" required></div><button class="btn" type="submit">Search Schedule / 查询船期</button></form><div id="scheduleResult" class="small"></div></article>
+  <article class="card"><h3>3) Cargo Status Query / 货物状态查询</h3><form id="trackForm" class="form"><input class="input" name="trackId" placeholder="BL / Container / Order ID" required><button class="btn" type="submit">Track / 查询状态</button></form><div id="trackResult" class="small"></div></article>
+</div>
+</div></section>
+
+<section class="section band"><div class="container"><h2>4) Online Order / 在线下单</h2><form id="orderForm" class="card form"><div class="form-grid-2"><input class="input" name="customer" placeholder="Customer Name / 客户姓名" required><input class="input" name="company" placeholder="Company / 公司" required></div><div class="form-grid-2"><input class="input" name="origin" placeholder="Origin / 起运地" required><input class="input" name="destination" placeholder="Destination / 目的地" required></div><div class="form-grid-2"><select name="mode" required><option value="">Mode / 运输方式</option><option>Sea Freight</option><option>Air Freight</option></select><input class="input" type="date" name="eta" required></div><textarea name="cargo" placeholder="Cargo info / 货物信息" required></textarea><button class="btn primary" type="submit">Create Order / 创建订单</button></form><p id="orderCreateMsg" class="small"></p></div></section>
+
+<section class="section"><div class="container"><h2>5) Self Order Tracking / 自助订单追踪</h2><div class="card"><form id="orderLookupForm" class="form"><div class="form-grid-2"><input class="input" name="orderId" placeholder="Order ID / BL / Container (e.g. UTX123456)" required><button class="btn" type="submit">Check Status / 查询状态</button></div></form><div id="orderLookupResult" class="small"></div></div>
+<div class="card" style="margin-top:12px"><button class="btn" id="loadMyOrdersBtn" type="button">Load My Orders / 加载我的订单</button></div>
+<div id="myOrders" class="cards" style="margin-top:14px"></div></div></section>
+
+<section class="section" id="adminPanel" style="display:none"><div class="container"><h2>Ops/Admin Panel / 运营后台</h2><div class="card"><form id="adminUpdateForm" class="form"><div class="form-grid-2"><input class="input" name="orderNo" placeholder="Order No (e.g. UTX12345678)" required><select name="status" required><option value="">Select Status / 选择状态</option><option>order_created</option><option>booked</option><option>in_transit</option><option>arrived_port</option><option>customs_clearance</option><option>out_for_delivery</option><option>delivered</option><option>exception</option></select></div><input class="input" name="eventType" placeholder="Event Type / 事件类型（可选）"><textarea name="eventText" placeholder="Event detail / 事件详情" required></textarea><button class="btn primary" type="submit">Update Order Status / 更新订单状态</button></form><p id="adminMsg" class="small"></p></div><div class="card" style="margin-top:12px"><button id="refreshAllOrders" class="btn" type="button">Refresh All Orders / 刷新全部订单</button></div>
+<div class="card" style="margin-top:12px"><h3>Bulk Import Schedules (CSV) / 批量导入船期</h3><p class="small">Header: origin,destination,vessel,etd,eta,active</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px"><button id="downloadScheduleTemplate" class="btn" type="button">Download Schedule Template / 下载船期模板</button></div><textarea id="bulkScheduleCsv" placeholder="origin,destination,vessel,etd,eta,active\nshenzhen,singapore,UTX Pacific,2026-03-10,2026-03-14,true"></textarea><button id="bulkScheduleBtn" class="btn" type="button">Import Schedules / 导入船期</button></div>
+<div class="card" style="margin-top:12px"><h3>Bulk Update Orders (CSV) / 批量更新订单</h3><p class="small">Header: order_no,status,event_type,event_text</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px"><button id="downloadOrderTemplate" class="btn" type="button">Download Order Template / 下载订单模板</button></div><textarea id="bulkOrderCsv" placeholder="order_no,status,event_type,event_text\nUTX12345678,in_transit,status_update,Departed Shenzhen"></textarea><button id="bulkOrderBtn" class="btn" type="button">Bulk Update Orders / 批量更新订单</button></div>
+<div id="allOrders" class="cards" style="margin-top:14px"></div></div></section>
+
+<footer class="footer"><div class="container">© 2026 Unitex Logistics · Customer Portal Commercial API Version</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="portal-config.js"></script>
+<script src="script.js"></script></body></html>
