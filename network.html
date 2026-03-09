@@ -58,30 +58,49 @@
               <stop offset="0%" stop-color="#f59e0b"/>
               <stop offset="100%" stop-color="#fb923c"/>
             </linearGradient>
+            <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="2.2" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <filter id="glowOrange" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="1.8" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
           </defs>
 
           <rect x="0" y="0" width="1100" height="460" fill="#f7fbff"/>
 
-          <ellipse cx="180" cy="225" rx="125" ry="85" fill="#eaf2ff"/>
-          <ellipse cx="460" cy="200" rx="200" ry="110" fill="#edf5ff"/>
-          <ellipse cx="780" cy="220" rx="230" ry="120" fill="#eaf8ff"/>
-          <ellipse cx="1010" cy="310" rx="110" ry="70" fill="#eef7ff"/>
+          <!-- world-map style silhouettes -->
+          <path d="M78 208 L108 180 L160 168 L205 172 L256 158 L282 176 L268 203 L287 226 L246 255 L192 266 L150 260 L106 238 Z" fill="#e7f0fe" stroke="#d3e0f3"/>
+          <path d="M275 286 L300 270 L333 278 L350 300 L335 334 L304 338 L278 316 Z" fill="#eaf3ff" stroke="#d8e4f5"/>
+          <path d="M360 158 L405 132 L455 136 L502 126 L548 134 L584 156 L621 168 L658 188 L682 216 L666 244 L628 256 L586 248 L558 266 L520 274 L482 264 L454 246 L430 226 L392 216 L370 188 Z" fill="#e8f2ff" stroke="#d2e0f3"/>
+          <path d="M534 278 L560 292 L582 315 L564 334 L536 326 L521 300 Z" fill="#ebf4ff" stroke="#d8e4f5"/>
+          <path d="M706 186 L748 170 L798 172 L843 160 L888 170 L922 194 L948 226 L940 250 L904 266 L856 264 L818 280 L770 274 L732 256 L708 230 Z" fill="#e9f6ff" stroke="#d2e6f4"/>
+          <path d="M888 294 L915 306 L934 328 L920 348 L892 342 L876 320 Z" fill="#edf7ff" stroke="#dce9f6"/>
 
-          <path d="M500 180 C 620 120, 760 120, 875 165" stroke="url(#lineBlue)" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <path d="M500 190 C 420 145, 330 140, 245 170" stroke="url(#lineOrange)" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <path d="M510 210 C 635 250, 810 270, 930 320" stroke="url(#lineBlue)" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <path d="M490 215 C 400 260, 285 275, 200 250" stroke="url(#lineOrange)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- lanes -->
+          <path class="route-line route-blue" d="M520 188 C 642 126, 770 122, 884 170" stroke="url(#lineBlue)" stroke-width="4" fill="none" stroke-linecap="round" filter="url(#glowBlue)"/>
+          <path class="route-line route-orange" d="M515 200 C 422 150, 330 146, 235 184" stroke="url(#lineOrange)" stroke-width="4" fill="none" stroke-linecap="round" filter="url(#glowOrange)"/>
+          <path class="route-line route-blue delay-1" d="M528 222 C 660 256, 806 282, 928 326" stroke="url(#lineBlue)" stroke-width="4" fill="none" stroke-linecap="round" filter="url(#glowBlue)"/>
+          <path class="route-line route-orange delay-2" d="M500 230 C 410 268, 296 280, 208 250" stroke="url(#lineOrange)" stroke-width="3.5" fill="none" stroke-linecap="round" filter="url(#glowOrange)"/>
 
-          <circle cx="515" cy="200" r="9" fill="#0b5cad"/>
-          <circle cx="875" cy="165" r="8" fill="#0b5cad"/>
-          <circle cx="245" cy="170" r="8" fill="#ef8f2f"/>
-          <circle cx="930" cy="320" r="7" fill="#0b5cad"/>
-          <circle cx="200" cy="250" r="7" fill="#ef8f2f"/>
+          <!-- hubs -->
+          <circle cx="518" cy="202" r="9" fill="#0b5cad"/>
+          <circle cx="884" cy="170" r="8" fill="#0b5cad"/>
+          <circle cx="235" cy="184" r="8" fill="#ef8f2f"/>
+          <circle cx="928" cy="326" r="7" fill="#0b5cad"/>
+          <circle cx="208" cy="250" r="7" fill="#ef8f2f"/>
 
-          <text x="528" y="196" font-size="14" fill="#0f2f5c" font-weight="700">HKG / SZX / SHA</text>
-          <text x="886" y="160" font-size="13" fill="#0f2f5c">EU Hubs</text>
-          <text x="940" y="336" font-size="13" fill="#0f2f5c">SEA Nodes</text>
-          <text x="140" y="166" font-size="13" fill="#0f2f5c">US Gateways</text>
+          <text x="530" y="196" font-size="14" fill="#0f2f5c" font-weight="700">HKG / SZX / SHA</text>
+          <text x="895" y="167" font-size="13" fill="#0f2f5c">EU Hubs</text>
+          <text x="940" y="340" font-size="13" fill="#0f2f5c">SEA Nodes</text>
+          <text x="130" y="178" font-size="13" fill="#0f2f5c">US Gateways</text>
         </svg>
       </div>
 

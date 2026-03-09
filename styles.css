@@ -557,12 +557,26 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
   border-radius: 14px;
   overflow: hidden;
   background: #f7fbff;
+  position: relative;
+}
+.network-map-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 78% 20%, rgba(239,143,47,.08), transparent 38%), radial-gradient(circle at 22% 72%, rgba(20,99,194,.08), transparent 42%);
+  pointer-events: none;
 }
 .network-map-svg {
   width: 100%;
   height: auto;
   display: block;
 }
+.route-line {
+  stroke-dasharray: 12 10;
+  animation: flowDash 5.2s linear infinite;
+}
+.route-line.delay-1 { animation-delay: .8s; }
+.route-line.delay-2 { animation-delay: 1.4s; }
 .network-lanes {
   display: flex;
   flex-wrap: wrap;
@@ -589,6 +603,11 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
 .lane-dot-orange { background: #ef8f2f; }
 .network-hub-card {
   border-top: 3px solid #ef8f2f;
+}
+
+@keyframes flowDash {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -220; }
 }
 
 @media (max-width: 920px) {
