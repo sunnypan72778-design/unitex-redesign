@@ -24,24 +24,34 @@
   </div>
 </header>
 
-<section class="section">
-  <div class="container grid-2" style="align-items:start;">
-    <div>
-      <div class="kicker">Contact Unitex / 联系 Unitex</div>
-      <h1 style="font-size:48px">Tell Us Your Route. We’ll Build Your Plan.<br>告诉我们运输需求，我们为你定制方案</h1>
-      <p class="sub">Share cargo type, urgency and budget for faster quote accuracy.<br>填写货类、时效与预算可提升报价准确性。</p>
+<section class="section contact-page">
+  <div class="container contact-layout">
+    <div class="contact-main">
+      <div class="card contact-hero">
+        <div class="kicker">Contact Unitex / 联系 Unitex</div>
+        <h1 class="contact-title">Tell Us Your Route. We’ll Build Your Plan.<br>告诉我们运输需求，我们为你定制方案</h1>
+        <p class="sub">Share cargo type, urgency and budget for faster quote accuracy.<br>填写货类、时效与预算可提升报价准确性。</p>
+        <p class="contact-trust-copy">Reliable support from origin planning to destination handover, backed by local teams across major China ports.<br>从起运规划到目的港交付，全程由中国主要港口本地团队协同支持。</p>
+        <div class="contact-trust-strip">
+          <div class="trust-pill"><b>16</b><span>China Port Offices / 中国港口办事处</span></div>
+          <div class="trust-pill"><b>24h</b><span>Fast Quote Response / 快速报价响应</span></div>
+          <div class="trust-pill"><b>Local</b><span>Service Coverage / 本地化服务覆盖</span></div>
+        </div>
+      </div>
 
       <section class="card branch-locator" id="branchLocator">
         <div class="locator-head">
+          <div class="locator-badge">16 China Port Offices / 中国 16 个港口办事处</div>
           <h3>Find Your Local Unitex Office<br><span class="small">查找当地 Unitex 办事处</span></h3>
-          <p class="small">Use filters to quickly find your nearest China branch office.<br>使用筛选器快速定位最合适的中国分公司。</p>
+          <p class="small">Filter by city/port, search office name, and connect directly with local service teams.<br>按城市或港口筛选，搜索办事处名称，并直接联系本地服务团队。</p>
         </div>
 
-        <div class="locator-controls form-grid-2">
+        <div class="locator-controls locator-controls-3">
           <select id="cityFilter" class="input" aria-label="City or port filter">
             <option value="all">All Ports / 全部港口</option>
           </select>
           <input id="officeSearch" class="input" type="search" placeholder="Search office name / 搜索办事处名称" aria-label="Search office name">
+          <button id="clearLocatorFilters" type="button" class="btn locator-clear-btn">Reset Filters / 重置筛选</button>
         </div>
 
         <div id="serviceTagFilters" class="service-tag-filters" aria-label="Service filters"></div>
@@ -52,25 +62,49 @@
       </section>
     </div>
 
-    <div class="card">
-      <form id="quoteForm" class="form">
-        <div class="form-grid-2">
-          <input class="input" name="name" placeholder="Your Name / 姓名" required>
-          <input class="input" name="company" placeholder="Company / 公司" required>
-        </div>
-        <div class="form-grid-2">
-          <input class="input" type="email" name="email" placeholder="Email / 邮箱" required>
-          <input class="input" name="phone" placeholder="Phone / 电话" required>
-        </div>
-        <div class="form-grid-2">
-          <input class="input" name="origin" placeholder="Origin / 起运地" required>
-          <input class="input" name="destination" placeholder="Destination / 目的地" required>
-        </div>
-        <textarea name="details" placeholder="Cargo details / 货物信息" required></textarea>
-        <button class="btn primary" type="submit">Submit Inquiry / 提交询盘</button>
-      </form>
-      <p class="small" style="margin-top:10px">Form opens mail app (mailto). / 表单将打开邮件客户端。</p>
-    </div>
+    <aside class="contact-side">
+      <div class="card contact-form-card">
+        <h3>Fast Inquiry Form / 快速询盘表单</h3>
+        <p class="small">Tell us your route and shipment details, we will match you with the right local team.<br>提交线路与货物信息后，我们将匹配最合适的本地团队。</p>
+        <form id="quoteForm" class="form">
+          <div class="form-grid-2">
+            <input class="input" name="name" placeholder="Your Name / 姓名" required>
+            <input class="input" name="company" placeholder="Company / 公司" required>
+          </div>
+          <div class="form-grid-2">
+            <input class="input" type="email" name="email" placeholder="Email / 邮箱" required>
+            <input class="input" name="phone" placeholder="Phone / 电话" required>
+          </div>
+          <div class="form-grid-2">
+            <input class="input" name="origin" placeholder="Origin / 起运地" required>
+            <input class="input" name="destination" placeholder="Destination / 目的地" required>
+          </div>
+          <textarea name="details" placeholder="Cargo details / 货物信息" required></textarea>
+          <button class="btn primary" type="submit">Submit Inquiry / 提交询盘</button>
+        </form>
+        <p class="small contact-form-note">Form opens mail app (mailto). / 表单将打开邮件客户端。</p>
+      </div>
+
+      <div class="card contact-value-card">
+        <h3>Why Contact Unitex Locally?<br><span class="small">为何优先联系本地 Unitex 办事处？</span></h3>
+        <ul class="value-list">
+          <li>Faster slot and routing recommendations / 更快获得舱位与线路建议</li>
+          <li>Local customs and compliance coordination / 本地报关与合规协同</li>
+          <li>Clear communication across shipment milestones / 节点清晰、沟通高效</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="container">
+    <section class="card contact-process">
+      <h3>How It Works / 联系流程</h3>
+      <div class="process-grid">
+        <article class="process-step"><b>01</b><h4>Tell us your cargo / 告知运输需求</h4><p>Provide route, cargo type and timeline expectations.</p></article>
+        <article class="process-step"><b>02</b><h4>Select local office / 选择本地办事处</h4><p>Use the locator to match your nearest branch support team.</p></article>
+        <article class="process-step"><b>03</b><h4>Get tailored solution / 获取定制方案</h4><p>Receive practical mode and cost recommendations with clear milestones.</p></article>
+      </div>
+    </section>
   </div>
 </section>
 

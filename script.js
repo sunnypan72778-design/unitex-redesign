@@ -30,6 +30,7 @@ function initBranchLocator() {
 
   const cityFilter = document.querySelector('#cityFilter');
   const officeSearch = document.querySelector('#officeSearch');
+  const clearLocatorFilters = document.querySelector('#clearLocatorFilters');
   const branchResults = document.querySelector('#branchResults');
   const branchCount = document.querySelector('#branchCount');
   const branchEmpty = document.querySelector('#branchEmpty');
@@ -218,7 +219,7 @@ function initBranchLocator() {
       ${serviceTags
         .map(
           (tag) => `
-      <button type="button" class="tag-filter-btn ${activeServiceTag === tag ? 'active' : ''}" data-tag="${tag}">
+      <button type="button" aria-pressed="${activeServiceTag === tag ? 'true' : 'false'}" class="tag-filter-btn ${activeServiceTag === tag ? 'active' : ''}" data-tag="${tag}">
         ${tag}
       </button>`
         )
@@ -266,7 +267,7 @@ function initBranchLocator() {
         </ul>
         <div class="office-tags">
           ${office.tags
-            .map((tag) => `<button type="button" class="office-tag" data-tag="${tag}">${tag}</button>`)
+            .map((tag) => `<button type="button" class="office-tag ${activeServiceTag === tag ? 'active' : ''}" data-tag="${tag}">${tag}</button>`)
             .join('')}
         </div>
         <a class="btn office-cta" href="mailto:${office.email}?subject=${encodeURIComponent(`Contact ${office.officeName}`)}">Contact This Office / 联系该办事处</a>
@@ -277,6 +278,15 @@ function initBranchLocator() {
 
   cityFilter.addEventListener('change', renderCards);
   officeSearch.addEventListener('input', renderCards);
+  if (clearLocatorFilters) {
+    clearLocatorFilters.addEventListener('click', () => {
+      cityFilter.value = 'all';
+      officeSearch.value = '';
+      activeServiceTag = 'all';
+      renderServiceFilters();
+      renderCards();
+    });
+  }
   serviceTagFilters.addEventListener('click', (event) => {
     const button = event.target.closest('button[data-tag]');
     if (!button) return;
