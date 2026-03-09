@@ -504,8 +504,95 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
+.network-hero-section {
+  padding-bottom: 34px;
+}
+.network-title {
+  font-size: clamp(34px, 5vw, 60px);
+  letter-spacing: -0.02em;
+}
+.network-lead {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.network-kpi-grid {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.network-kpi {
+  background: #fff;
+  border: 1px solid #d8e5f3;
+  border-radius: 14px;
+  padding: 14px 10px;
+  box-shadow: 0 10px 22px rgba(15,23,42,.05);
+}
+.network-kpi b {
+  display: block;
+  color: #0b3a75;
+  font-size: 26px;
+  margin-bottom: 3px;
+}
+.network-kpi span {
+  color: #597089;
+  font-size: 12px;
+}
+.network-map-section {
+  padding-top: 16px;
+}
+.network-map-card {
+  border: 1px solid #d2e1f1;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
+  padding: 18px;
+  box-shadow: 0 16px 34px rgba(11,58,117,.08);
+}
+.network-map-head h2 {
+  margin: 2px 0 8px;
+  color: #0b2d59;
+}
+.network-map-wrap {
+  border: 1px solid #dbe7f5;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f7fbff;
+}
+.network-map-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.network-lanes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+.lane-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 8px 12px;
+  border: 1px solid #d1e1f2;
+  background: #fff;
+  color: #28496f;
+  font-size: 13px;
+}
+.lane-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+}
+.lane-dot-blue { background: #2d6db7; }
+.lane-dot-orange { background: #ef8f2f; }
+.network-hub-card {
+  border-top: 3px solid #ef8f2f;
+}
+
 @media (max-width: 920px) {
-  .grid-2, .cards, .cols-4, .logo-strip, .metric-grid, .faq-grid, .form-grid-2, .portal-grid, .branch-card-grid, .contact-layout, .process-grid, .contact-trust-strip, .locator-controls-3 { grid-template-columns:1fr; }
+  .grid-2, .cards, .cols-4, .logo-strip, .metric-grid, .faq-grid, .form-grid-2, .portal-grid, .branch-card-grid, .contact-layout, .process-grid, .contact-trust-strip, .locator-controls-3, .network-kpi-grid { grid-template-columns:1fr; }
   .menu { display:none; }
   .hero-media img { height:300px; }
   .locator-clear-btn { width: 100%; }
@@ -513,7 +600,8 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
   .branch-locator,
   .contact-process,
   .contact-form-card,
-  .contact-value-card { padding: 18px; }
+  .contact-value-card,
+  .network-map-card { padding: 18px; }
   .locator-head p.small,
   .contact-trust-copy { max-width: 100%; }
 }
