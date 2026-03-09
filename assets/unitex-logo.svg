@@ -1,39 +1,28 @@
-<svg width="460" height="120" viewBox="0 0 460 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="520" height="140" viewBox="0 0 520 140" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="460" y2="120" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FFF5F5"/>
-      <stop offset="1" stop-color="#FFFFFF"/>
-    </linearGradient>
-    <linearGradient id="redMain" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#D7263D"/>
-      <stop offset="1" stop-color="#B8122A"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop stop-color="#E53935"/>
-      <stop offset="1" stop-color="#C21807"/>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#B80F2A"/>
+      <stop offset="1" stop-color="#E03A52"/>
     </linearGradient>
   </defs>
 
-  <rect x="2" y="2" width="456" height="116" rx="22" fill="url(#bg)"/>
-  <rect x="2" y="2" width="456" height="116" rx="22" stroke="#F1B5BC" stroke-width="3"/>
+  <rect x="3" y="3" width="514" height="134" rx="24" fill="#FFFFFF" stroke="#E9D9DE" stroke-width="2"/>
 
-  <circle cx="66" cy="60" r="42" fill="white" stroke="#E8A3AB" stroke-width="2"/>
-  <circle cx="66" cy="60" r="39" fill="#FFF9FA" stroke="#F4C5CB"/>
+  <!-- Minimal globe mark -->
+  <circle cx="72" cy="70" r="30" fill="#FFF7F9" stroke="#D9929F" stroke-width="1.6"/>
+  <path d="M42 70H102" stroke="#D8A0AA" stroke-width="1.1"/>
+  <path d="M46 58H98" stroke="#DEB0B8" stroke-width="1"/>
+  <path d="M46 82H98" stroke="#DEB0B8" stroke-width="1"/>
+  <path d="M72 40V100" stroke="#D8A0AA" stroke-width="1.1"/>
+  <path d="M61 43C64 53 64 87 61 97" stroke="#E3BBC2" stroke-width="1"/>
+  <path d="M83 43C80 53 80 87 83 97" stroke="#E3BBC2" stroke-width="1"/>
+  <text x="53" y="78" fill="#B80F2A" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="900" font-style="italic">UIF</text>
 
-  <path d="M27 60H105" stroke="#D98994" stroke-width="1.8"/>
-  <path d="M31 45H101" stroke="#DE9AA3" stroke-opacity="0.9" stroke-width="1.5"/>
-  <path d="M31 75H101" stroke="#DE9AA3" stroke-opacity="0.9" stroke-width="1.5"/>
-  <path d="M38 33H94" stroke="#E4AFB6" stroke-opacity="0.75" stroke-width="1.3"/>
-  <path d="M38 87H94" stroke="#E4AFB6" stroke-opacity="0.75" stroke-width="1.3"/>
+  <!-- Wordmark centered as a block -->
+  <g transform="translate(276 70)">
+    <text x="0" y="-2" text-anchor="middle" fill="#C11733" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="850" letter-spacing="1.5">UNITEX</text>
+    <text x="0" y="36" text-anchor="middle" fill="#CF2A44" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="750" letter-spacing="5">汇 利 达</text>
+  </g>
 
-  <path d="M66 21V99" stroke="#D98994" stroke-width="1.7"/>
-  <path d="M52 25C55 40 55 80 52 95" stroke="#E4AFB6" stroke-width="1.3"/>
-  <path d="M80 25C77 40 77 80 80 95" stroke="#E4AFB6" stroke-width="1.3"/>
-
-  <text x="41" y="72" fill="url(#redMain)" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="900" font-style="italic">UIF</text>
-
-  <text x="276" y="58" text-anchor="middle" fill="#C4182D" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="850" letter-spacing="1.2">UNITEX</text>
-  <text x="276" y="90" text-anchor="middle" fill="#D12A3F" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="750" letter-spacing="4">汇 利 达</text>
-
-  <rect x="18" y="102" width="424" height="6" rx="3" fill="url(#accent)"/>
+  <rect x="34" y="110" width="452" height="7" rx="4" fill="url(#line)"/>
 </svg>

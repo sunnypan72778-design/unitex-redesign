@@ -18,8 +18,8 @@ img { display: block; max-width: 100%; }
 .nav { min-height: 82px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
 .brand { display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.02em; flex-shrink:0; }
 .logo {
-  width: 206px;
-  height: 56px;
+  width: 196px;
+  height: 54px;
   border-radius: 10px;
   background: transparent url('assets/unitex-logo.svg') center / contain no-repeat;
   color: transparent;
