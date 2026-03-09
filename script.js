@@ -317,6 +317,59 @@ function initBranchLocator() {
   renderCards();
 }
 
+function initNavMenu() {
+  const nav = document.querySelector('.nav');
+  const menu = document.querySelector('.menu');
+  if (!nav || !menu) return;
+
+  let toggle = nav.querySelector('.nav-toggle');
+  if (!toggle) {
+    toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'nav-toggle';
+    toggle.setAttribute('aria-label', 'Toggle menu');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.textContent = 'Menu';
+    nav.appendChild(toggle);
+  }
+
+  const closeMenu = () => {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const next = !menu.classList.contains('open');
+    menu.classList.toggle('open', next);
+    toggle.setAttribute('aria-expanded', String(next));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!menu.classList.contains('open')) return;
+    if (menu.contains(e.target) || toggle.contains(e.target)) return;
+    closeMenu();
+  });
+
+  menu.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => {
+      if (window.matchMedia('(max-width: 920px)').matches) closeMenu();
+    });
+  });
+
+  menu.querySelectorAll('.nav-dropdown > a').forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      const parent = trigger.closest('.nav-dropdown');
+      if (!parent) return;
+      if (!window.matchMedia('(max-width: 920px)').matches) return;
+      e.preventDefault();
+      const next = !parent.classList.contains('open');
+      menu.querySelectorAll('.nav-dropdown').forEach((d) => d.classList.remove('open'));
+      parent.classList.toggle('open', next);
+    });
+  });
+}
+
 function injectFloatingCTA() {
   if (document.querySelector('.float-quote-btn')) return;
   const a = document.createElement('a');
@@ -728,6 +781,7 @@ function initAdminPanel() {
   }
 }
 
+initNavMenu();
 currentPath();
 bindContactForm();
 initBranchLocator();
