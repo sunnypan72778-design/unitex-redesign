@@ -709,6 +709,100 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
   object-fit: cover;
 }
 
+.about-hero-section {
+  padding-bottom: 36px;
+}
+.about-title {
+  font-size: clamp(36px, 5vw, 60px);
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+.about-lead {
+  max-width: 760px;
+  font-size: 21px;
+}
+.about-hero-media img {
+  height: 520px;
+}
+.about-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+.about-badge {
+  border: 1px solid #d2e1f2;
+  background: #f4f8ff;
+  color: #174273;
+  border-radius: 999px;
+  padding: 6px 11px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.about-story-section {
+  padding-top: 14px;
+}
+.about-story-card {
+  border: 1px solid #d3e1f0;
+  box-shadow: 0 16px 32px rgba(11,58,117,.08);
+}
+.about-story-points {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.about-story-points article {
+  border: 1px solid #dbe7f6;
+  border-radius: 12px;
+  padding: 12px;
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
+}
+.about-story-points h4 {
+  margin: 0 0 6px;
+  color: #0b2d59;
+}
+.about-story-points p {
+  margin: 0;
+  color: #5b6f84;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.about-values-section {
+  padding-top: 18px;
+}
+.about-values-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+.about-value-card {
+  border-top: 3px solid #ef8f2f;
+}
+.about-value-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  background: linear-gradient(135deg, #edf4ff, #fff3e8);
+  border: 1px solid #d5e3f3;
+}
+.about-milestone-section {
+  padding-top: 18px;
+}
+.about-milestone-card {
+  border: 1px solid #d2e1f1;
+  box-shadow: 0 14px 30px rgba(11,58,117,.07);
+}
+.about-timeline {
+  margin-top: 12px;
+  color: #38516c;
+  line-height: 1.7;
+}
+.about-timeline b {
+  color: #0f2f5c;
+}
+
 .services-industry-section {
   padding-top: 18px;
 }
@@ -739,7 +833,7 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
 }
 
 @media (max-width: 920px) {
-  .grid-2, .cards, .cols-4, .logo-strip, .metric-grid, .faq-grid, .form-grid-2, .portal-grid, .branch-card-grid, .contact-layout, .process-grid, .contact-trust-strip, .locator-controls-3, .network-kpi-grid, .services-metric-grid, .services-highlight-card, .services-industry-grid { grid-template-columns:1fr; }
+  .grid-2, .cards, .cols-4, .logo-strip, .metric-grid, .faq-grid, .form-grid-2, .portal-grid, .branch-card-grid, .contact-layout, .process-grid, .contact-trust-strip, .locator-controls-3, .network-kpi-grid, .services-metric-grid, .services-highlight-card, .services-industry-grid, .about-values-grid, .about-story-points { grid-template-columns:1fr; }
   .menu { display:none; }
   .hero-media img { height:300px; }
   .locator-clear-btn { width: 100%; }
@@ -751,7 +845,10 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
   .network-map-card { padding: 18px; }
   .locator-head p.small,
   .contact-trust-copy,
-  .services-sub { max-width: 100%; }
+  .services-sub,
+  .about-lead { max-width: 100%; }
   .services-highlight-copy { padding: 18px; }
   .services-highlight-media img { min-height: 220px; }
+  .about-hero-media img { height: 320px; }
+  .about-lead { font-size: 18px; }
 }
