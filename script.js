@@ -322,9 +322,40 @@ function initLanguageToggle() {
   const menu = document.querySelector('.menu');
   if (!nav || !menu) return;
 
-  // Convert "EN / 中文" labels into switchable spans
+  // Convert bilingual content across pages (not only nav)
+  const contentTargets = document.querySelectorAll('section h1, section h2, section h3, section h4, section p, section li, section a, section .kicker, section .sub, footer a, footer p, footer div');
+  contentTargets.forEach((el) => {
+    if (el.closest('.menu, .lang-switch')) return;
+    if (el.querySelector('[data-lang]')) return;
+    const html = (el.innerHTML || '').trim();
+    if (!html) return;
+
+    // Pattern 1: English<br>中文
+    const brMatch = html.match(/^([\s\S]+?)<br\s*\/?>([\s\S]+)$/i);
+    if (brMatch) {
+      const en = brMatch[1].trim();
+      const zh = brMatch[2].trim();
+      if (en && zh) {
+        el.innerHTML = `<span data-lang="en">${en}</span><span data-lang="zh">${zh}</span>`;
+        return;
+      }
+    }
+
+    // Pattern 2: English / 中文
+    const slashMatch = html.match(/^([\s\S]+?)\s\/\s([\s\S]+)$/);
+    if (slashMatch) {
+      const en = slashMatch[1].trim();
+      const zh = slashMatch[2].trim();
+      if (en && zh) {
+        el.innerHTML = `<span data-lang="en">${en}</span><span data-lang="zh">${zh}</span>`;
+      }
+    }
+  });
+
+  // Convert nav labels
   const labelLinks = nav.querySelectorAll('.menu a, .nav > .btn');
   labelLinks.forEach((a) => {
+    if (a.querySelector('[data-lang]')) return;
     const txt = (a.textContent || '').trim();
     const m = txt.match(/^(.+?)\s*\/\s*(.+)$/);
     if (!m) return;
