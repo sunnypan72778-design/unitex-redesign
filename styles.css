@@ -178,14 +178,14 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
 .locator-badge {
   display: inline-flex;
   align-items: center;
-  border: 1px solid #9ebee3;
-  color: #0b3a75;
+  border: 1px solid #f0bf86;
+  color: #a95e00;
   border-radius: 999px;
   padding: 6px 12px;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: .02em;
-  background: #f2f7ff;
+  background: #fff4e8;
   margin-bottom: 12px;
 }
 .locator-head h3 {
@@ -385,13 +385,13 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
 .office-cta {
   margin-top: 14px;
   border: 0;
-  background: linear-gradient(90deg, #0e4689, #1a67c4);
+  background: linear-gradient(90deg, #0e4689 0%, #1a67c4 58%, #ef8f2f 100%);
   color: #ffffff;
   font-weight: 700;
-  box-shadow: 0 10px 20px rgba(11,58,117,.18);
+  box-shadow: 0 10px 22px rgba(71, 53, 31, .2);
 }
 .office-cta:hover {
-  box-shadow: 0 12px 24px rgba(11, 58, 117, 0.22);
+  box-shadow: 0 12px 26px rgba(71, 53, 31, .25);
 }
 .branch-empty {
   margin-top: 14px;
@@ -445,10 +445,11 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
 }
 .contact-form-card .btn.primary {
   min-height: 44px;
-  box-shadow: 0 10px 18px rgba(11,58,117,.18);
+  background: linear-gradient(90deg, #0e4689 0%, #1a67c4 55%, #ef8f2f 100%);
+  box-shadow: 0 10px 20px rgba(71,53,31,.2);
 }
 .contact-form-card .btn.primary:hover {
-  box-shadow: 0 12px 24px rgba(11,58,117,.22);
+  box-shadow: 0 12px 24px rgba(71,53,31,.25);
 }
 .value-list {
   margin: 10px 0 0;
@@ -484,8 +485,8 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
   border-radius: 999px;
   align-items: center;
   justify-content: center;
-  color: #0b3a75;
-  background: #eaf2ff;
+  color: #a95e00;
+  background: #fff3e6;
   margin-bottom: 8px;
 }
 .process-step h4 {
