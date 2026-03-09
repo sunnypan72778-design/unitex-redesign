@@ -827,13 +827,95 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
   margin-bottom: 10px;
 }
 
+.corebiz-hero {
+  padding-bottom: 24px;
+}
+.corebiz-title {
+  font-size: clamp(34px, 5vw, 56px);
+  letter-spacing: -0.018em;
+}
+.corebiz-sub {
+  max-width: 760px;
+}
+.corebiz-main {
+  padding-top: 10px;
+}
+.corebiz-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.corebiz-side {
+  position: sticky;
+  top: 90px;
+}
+.corebiz-side h3 {
+  margin-top: 0;
+}
+.corebiz-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.corebiz-menu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d9e6f4;
+  background: #f9fcff;
+  color: #1c4678;
+  font-size: 14px;
+}
+.corebiz-menu a.active,
+.corebiz-menu a:hover {
+  border-color: #f0bf86;
+  background: #fff4e8;
+  color: #a95e00;
+}
+.corebiz-content {
+  display: grid;
+  gap: 14px;
+}
+.corebiz-block {
+  border: 1px solid #d2e1f1;
+  box-shadow: 0 10px 24px rgba(11,58,117,.07);
+}
+.corebiz-block h2 {
+  margin: 0 0 8px;
+  color: #0b2d59;
+}
+.corebiz-chip-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0 12px;
+}
+.core-chip {
+  border: 1px solid #f0bf86;
+  background: #fff3e8;
+  color: #a95e00;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.corebiz-block img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #d9e6f5;
+  margin-top: 6px;
+}
+
 @keyframes flowDash {
   from { stroke-dashoffset: 0; }
   to { stroke-dashoffset: -220; }
 }
 
 @media (max-width: 920px) {
-  .grid-2, .cards, .cols-4, .logo-strip, .metric-grid, .faq-grid, .form-grid-2, .portal-grid, .branch-card-grid, .contact-layout, .process-grid, .contact-trust-strip, .locator-controls-3, .network-kpi-grid, .services-metric-grid, .services-highlight-card, .services-industry-grid, .about-values-grid, .about-story-points { grid-template-columns:1fr; }
+  .grid-2, .cards, .cols-4, .logo-strip, .metric-grid, .faq-grid, .form-grid-2, .portal-grid, .branch-card-grid, .contact-layout, .process-grid, .contact-trust-strip, .locator-controls-3, .network-kpi-grid, .services-metric-grid, .services-highlight-card, .services-industry-grid, .about-values-grid, .about-story-points, .corebiz-layout { grid-template-columns:1fr; }
   .menu { display:none; }
   .hero-media img { height:300px; }
   .locator-clear-btn { width: 100%; }
@@ -851,4 +933,5 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
   .services-highlight-media img { min-height: 220px; }
   .about-hero-media img { height: 320px; }
   .about-lead { font-size: 18px; }
+  .corebiz-side { position: static; }
 }
