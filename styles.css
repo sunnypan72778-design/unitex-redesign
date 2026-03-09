@@ -33,6 +33,28 @@ img { display: block; max-width: 100%; }
 .menu { display:flex; align-items:center; gap:8px; color:#334155; font-size:13px; white-space:nowrap; flex:1; justify-content:center; min-width:0; }
 .menu a { padding: 6px 8px; border-radius: 8px; }
 .menu a:hover, .menu a.active { color: var(--brand-2); background:#eef4ff; }
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display:inline-block; }
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 250px;
+  background: #fff;
+  border: 1px solid #d9e5f3;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(15,23,42,.14);
+  padding: 8px;
+  display: none;
+  z-index: 30;
+}
+.dropdown-menu a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: #243b57;
+}
+.nav-dropdown:hover .dropdown-menu { display: block; }
 .nav .btn { white-space: nowrap; flex-shrink:0; }
 .lang-switch { display:flex; gap:6px; }
 .lang-btn {
@@ -814,6 +836,37 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
 .about-timeline b {
   color: #0f2f5c;
 }
+.about-spain-section,
+.about-csr-section,
+.about-thanks-section {
+  padding-top: 14px;
+}
+.about-spain-card {
+  border: 1px solid #d2e1f1;
+  box-shadow: 0 14px 30px rgba(11,58,117,.07);
+}
+.about-spain-grid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.about-spain-grid article {
+  border: 1px solid #dce8f6;
+  border-radius: 12px;
+  padding: 12px;
+  background: linear-gradient(180deg, #fff, #f8fbff);
+}
+.about-spain-grid b { color: #0b2d59; }
+.about-spain-grid p { margin: 6px 0 0; color: #5a6f84; font-size: 14px; }
+.about-csr-card {
+  border-top: 3px solid #ef8f2f;
+}
+.about-thanks-card {
+  text-align: center;
+  border: 1px solid #f0bf86;
+  background: linear-gradient(180deg, #fff7ef, #fff);
+}
 
 .services-industry-section {
   padding-top: 18px;
@@ -927,7 +980,7 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
 }
 
 @media (max-width: 920px) {
-  .grid-2, .cards, .cols-4, .logo-strip, .metric-grid, .faq-grid, .form-grid-2, .portal-grid, .branch-card-grid, .contact-layout, .process-grid, .contact-trust-strip, .locator-controls-3, .network-kpi-grid, .services-metric-grid, .services-highlight-card, .services-industry-grid, .about-values-grid, .about-story-points, .corebiz-layout { grid-template-columns:1fr; }
+  .grid-2, .cards, .cols-4, .logo-strip, .metric-grid, .faq-grid, .form-grid-2, .portal-grid, .branch-card-grid, .contact-layout, .process-grid, .contact-trust-strip, .locator-controls-3, .network-kpi-grid, .services-metric-grid, .services-highlight-card, .services-industry-grid, .about-values-grid, .about-story-points, .about-spain-grid, .corebiz-layout { grid-template-columns:1fr; }
   .menu { display:none; }
   .hero-media img { height:300px; }
   .locator-clear-btn { width: 100%; }
