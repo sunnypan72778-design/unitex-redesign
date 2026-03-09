@@ -211,15 +211,26 @@ function initBranchLocator() {
   });
 
   const serviceTags = [...new Set(branchOffices.flatMap((item) => item.tags))];
+  const serviceTagClassMap = {
+    'Ocean Freight': 'service-ocean',
+    'Air Freight': 'service-air',
+    Warehousing: 'service-warehouse',
+    Customs: 'service-customs'
+  };
+
+  function getServiceTagClass(tag) {
+    return serviceTagClassMap[tag] || 'service-default';
+  }
+
   function renderServiceFilters() {
     serviceTagFilters.innerHTML = `
-      <button type="button" class="tag-filter-btn ${activeServiceTag === 'all' ? 'active' : ''}" data-tag="all">
+      <button type="button" class="tag-filter-btn service-all ${activeServiceTag === 'all' ? 'active' : ''}" data-tag="all">
         All Services / 全部服务
       </button>
       ${serviceTags
         .map(
           (tag) => `
-      <button type="button" aria-pressed="${activeServiceTag === tag ? 'true' : 'false'}" class="tag-filter-btn ${activeServiceTag === tag ? 'active' : ''}" data-tag="${tag}">
+      <button type="button" aria-pressed="${activeServiceTag === tag ? 'true' : 'false'}" class="tag-filter-btn ${getServiceTagClass(tag)} ${activeServiceTag === tag ? 'active' : ''}" data-tag="${tag}">
         ${tag}
       </button>`
         )
@@ -267,7 +278,7 @@ function initBranchLocator() {
         </ul>
         <div class="office-tags">
           ${office.tags
-            .map((tag) => `<button type="button" class="office-tag ${activeServiceTag === tag ? 'active' : ''}" data-tag="${tag}">${tag}</button>`)
+            .map((tag) => `<button type="button" class="office-tag ${getServiceTagClass(tag)} ${activeServiceTag === tag ? 'active' : ''}" data-tag="${tag}">${tag}</button>`)
             .join('')}
         </div>
         <a class="btn office-cta" href="mailto:${office.email}?subject=${encodeURIComponent(`Contact ${office.officeName}`)}">Contact This Office / 联系该办事处</a>

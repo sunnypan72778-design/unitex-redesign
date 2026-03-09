@@ -157,6 +157,18 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
   font-size: 12px;
   line-height: 1.45;
 }
+.contact-trust-strip .trust-pill:nth-child(1) {
+  border-color: #9fc0e8;
+  background: linear-gradient(180deg, #f7fbff, #edf6ff);
+}
+.contact-trust-strip .trust-pill:nth-child(2) {
+  border-color: #95d7e8;
+  background: linear-gradient(180deg, #f3fdff, #e7f9ff);
+}
+.contact-trust-strip .trust-pill:nth-child(3) {
+  border-color: #a9d8b2;
+  background: linear-gradient(180deg, #f4fcf6, #e9f7ed);
+}
 .branch-locator {
   padding: 22px;
   border: 1px solid #c9dcef;
@@ -244,15 +256,68 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
   transition: all .18s ease;
 }
 .tag-filter-btn.active {
-  background: linear-gradient(180deg, #e9f2ff, #edf5ff);
-  border-color: #88add9;
-  color: #0b3a75;
-  box-shadow: 0 4px 12px rgba(11, 58, 117, .12);
+  border-color: currentColor;
+  box-shadow: 0 4px 12px rgba(31, 48, 74, .14);
 }
 .tag-filter-btn:hover,
 .office-tag:hover {
-  border-color: #86a9d5;
-  background: #f3f8ff;
+  border-color: #9bb2cd;
+  transform: translateY(-1px);
+}
+
+.tag-filter-btn.service-all,
+.office-tag.service-default {
+  background: linear-gradient(180deg, #eef4ff, #f3f7ff);
+  color: #0b3a75;
+  border-color: #9bb7dd;
+}
+.tag-filter-btn.service-all.active,
+.office-tag.service-default.active {
+  background: linear-gradient(180deg, #dceafe, #e7f1ff);
+}
+
+.tag-filter-btn.service-ocean,
+.office-tag.service-ocean {
+  background: linear-gradient(180deg, #e8f3ff, #f0f7ff);
+  color: #0b5cad;
+  border-color: #9fc0e8;
+}
+.tag-filter-btn.service-ocean.active,
+.office-tag.service-ocean.active {
+  background: linear-gradient(180deg, #d8ebff, #e7f3ff);
+}
+
+.tag-filter-btn.service-air,
+.office-tag.service-air {
+  background: linear-gradient(180deg, #e8fbff, #f0feff);
+  color: #00779a;
+  border-color: #95d7e8;
+}
+.tag-filter-btn.service-air.active,
+.office-tag.service-air.active {
+  background: linear-gradient(180deg, #d5f6ff, #e6fbff);
+}
+
+.tag-filter-btn.service-warehouse,
+.office-tag.service-warehouse {
+  background: linear-gradient(180deg, #ecf9ef, #f4fcf6);
+  color: #2f7a3f;
+  border-color: #a9d8b2;
+}
+.tag-filter-btn.service-warehouse.active,
+.office-tag.service-warehouse.active {
+  background: linear-gradient(180deg, #dcf3e1, #eaf8ee);
+}
+
+.tag-filter-btn.service-customs,
+.office-tag.service-customs {
+  background: linear-gradient(180deg, #fff3e8, #fff8ef);
+  color: #b86a00;
+  border-color: #f0bf86;
+}
+.tag-filter-btn.service-customs.active,
+.office-tag.service-customs.active {
+  background: linear-gradient(180deg, #ffe8cf, #fff2e2);
 }
 .branch-count {
   margin: 13px 0 0;
@@ -356,6 +421,16 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
   font-weight: 700;
   letter-spacing: .02em;
   margin-bottom: 10px;
+}
+.contact-side .card:nth-child(1) .contact-card-chip {
+  border-color: #f0bf86;
+  background: #fff4e8;
+  color: #a95e00;
+}
+.contact-side .card:nth-child(2) .contact-card-chip {
+  border-color: #9fd5d8;
+  background: #e9fbfb;
+  color: #136a6d;
 }
 .contact-form-note {
   margin-top: 10px;
