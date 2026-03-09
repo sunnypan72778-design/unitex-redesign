@@ -1,0 +1,33 @@
+<svg width="420" height="120" viewBox="0 0 420 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="420" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#16243B"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E66D0"/>
+      <stop offset="1" stop-color="#F08A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="2" y="2" width="416" height="116" rx="22" fill="url(#bg)"/>
+  <rect x="2" y="2" width="416" height="116" rx="22" stroke="#0F172A" stroke-width="4"/>
+  <rect x="18" y="16" width="88" height="88" rx="44" fill="#0A111E" stroke="#9EC3FF" stroke-opacity="0.45"/>
+
+  <path d="M38 32H85" stroke="#8AB4FF" stroke-opacity="0.6" stroke-width="2"/>
+  <path d="M30 44H94" stroke="#8AB4FF" stroke-opacity="0.45" stroke-width="2"/>
+  <path d="M28 60H96" stroke="#8AB4FF" stroke-opacity="0.38" stroke-width="2"/>
+  <path d="M30 76H94" stroke="#8AB4FF" stroke-opacity="0.45" stroke-width="2"/>
+  <path d="M38 88H85" stroke="#8AB4FF" stroke-opacity="0.6" stroke-width="2"/>
+
+  <path d="M62 22V98" stroke="#8AB4FF" stroke-opacity="0.45" stroke-width="2"/>
+  <path d="M48 26C51 40 51 80 48 94" stroke="#8AB4FF" stroke-opacity="0.34" stroke-width="2"/>
+  <path d="M76 26C73 40 73 80 76 94" stroke="#8AB4FF" stroke-opacity="0.34" stroke-width="2"/>
+
+  <text x="40" y="72" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="900" font-style="italic">UF</text>
+
+  <text x="126" y="56" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="800" letter-spacing="1">UNITEX</text>
+  <text x="126" y="90" fill="#D7E7FF" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="4">汇 利 达</text>
+
+  <rect x="16" y="101" width="388" height="5" rx="3" fill="url(#accent)"/>
+</svg>
