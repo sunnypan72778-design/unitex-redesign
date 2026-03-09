@@ -329,7 +329,7 @@ function initNavMenu() {
     toggle.className = 'nav-toggle';
     toggle.setAttribute('aria-label', 'Toggle menu');
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.textContent = 'Menu';
+    toggle.innerHTML = '<span class="hamburger" aria-hidden="true"><span></span><span></span><span></span></span><span class="menu-label">Menu</span>';
     nav.appendChild(toggle);
   }
 
