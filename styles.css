@@ -91,10 +91,11 @@ img { display: block; max-width: 100%; }
 .menu.open + .nav-toggle .hamburger span:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
-.lang-switch { display:flex; gap:6px; }
+.lang-switch { display:flex; gap:6px; align-items:center; margin-left: 6px; flex-shrink: 0; }
 .lang-btn {
   border:1px solid #c8d5e6; background:#fff; color:#334155;
-  padding:6px 10px; border-radius:999px; font-size:12px; cursor:pointer;
+  padding:5px 9px; border-radius:999px; font-size:11px; cursor:pointer;
+  line-height: 1;
 }
 .lang-btn.active { background: #eaf2ff; color: #0b3a75; border-color:#9ebbe5; }
 /* Safe default: English visible even if JS fails */
@@ -156,6 +157,7 @@ h1 { margin: 10px 0 14px; font-size: clamp(32px,5vw,56px); line-height:1.05; }
   .menu { font-size: 11px; gap: 2px; }
   .menu a { padding: 5px; }
   .logo { width: 170px; height: 46px; }
+  .lang-btn { padding: 4px 8px; font-size: 10px; }
 }
 .portal-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:16px; }
 .result-ok { color:#0f766e; font-weight:600; }

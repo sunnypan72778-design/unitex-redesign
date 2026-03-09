@@ -317,6 +317,56 @@ function initBranchLocator() {
   renderCards();
 }
 
+function initLanguageToggle() {
+  const nav = document.querySelector('.nav');
+  const menu = document.querySelector('.menu');
+  if (!nav || !menu) return;
+
+  // Convert "EN / 中文" labels into switchable spans
+  const labelLinks = nav.querySelectorAll('.menu a, .nav > .btn');
+  labelLinks.forEach((a) => {
+    const txt = (a.textContent || '').trim();
+    const m = txt.match(/^(.+?)\s*\/\s*(.+)$/);
+    if (!m) return;
+    const en = m[1].trim();
+    const zh = m[2].trim();
+    a.innerHTML = `<span data-lang="en">${en}</span><span data-lang="zh">${zh}</span>`;
+  });
+
+  let current = localStorage.getItem('siteLangMode') || 'en';
+  document.documentElement.setAttribute('lang-mode', current === 'zh' ? 'zh' : 'en');
+
+  let sw = nav.querySelector('.lang-switch');
+  if (!sw) {
+    sw = document.createElement('div');
+    sw.className = 'lang-switch';
+    sw.innerHTML = `
+      <button type="button" class="lang-btn" data-lang-toggle="en">EN</button>
+      <button type="button" class="lang-btn" data-lang-toggle="zh">中</button>
+    `;
+    const navBtn = nav.querySelector(':scope > .btn');
+    if (navBtn) nav.insertBefore(sw, navBtn);
+    else nav.appendChild(sw);
+  }
+
+  const sync = () => {
+    sw.querySelectorAll('.lang-btn').forEach((b) => {
+      b.classList.toggle('active', b.getAttribute('data-lang-toggle') === current);
+    });
+  };
+
+  sw.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-lang-toggle]');
+    if (!b) return;
+    current = b.getAttribute('data-lang-toggle') || 'en';
+    document.documentElement.setAttribute('lang-mode', current === 'zh' ? 'zh' : 'en');
+    localStorage.setItem('siteLangMode', current);
+    sync();
+  });
+
+  sync();
+}
+
 function initNavMenu() {
   const nav = document.querySelector('.nav');
   const menu = document.querySelector('.menu');
@@ -781,6 +831,7 @@ function initAdminPanel() {
   }
 }
 
+initLanguageToggle();
 initNavMenu();
 currentPath();
 bindContactForm();
